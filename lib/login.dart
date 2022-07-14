@@ -19,107 +19,105 @@ class _Login extends State<Login> {
   //WidgetSize? widgetSize;
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
-          backgroundColor: Colors.white,
-          body: SafeArea(
-            child: ListView(
-              children: [
-                Container(
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height * 0.10,
-                ),
-                Container(
-                  color: Colors.white,
-                  height: MediaQuery.of(context).size.height * 0.20,
-                  child: const SizedBox(
-                    child: Image(image: AssetImage("assets/index.jpg")),
-                    // width: MediaQuery.of(context).size.width,
-                    // height: MediaQuery.of(context).size.height,
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(top: 30),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  //  color: Colors.yellow,
-                  child: TextField(
-                      controller: userController,
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(
-                          fontSize: 20, color: Color(0xFF000039)),
-                      decoration: const InputDecoration(
-                        fillColor: Colors.white, filled: true,
-                        prefixIcon: Icon(
-                          Icons.person,
-                          color: Color(0xFF000039),
-                        ),
-                        border: OutlineInputBorder(),
-                        hoverColor: Color(0xFF800000),
-                        focusColor: Color(0xFF800000),
-                        //labelText: 'اسم المستخدم',
-                        hintText: 'اسم المستخدم',
-                        hintStyle: TextStyle(
-                            color: Color(0xFF000039),
-                            fontWeight: FontWeight.bold),
-                      )),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.1,
-                  width: MediaQuery.of(context).size.width * 0.9,
-                  //  color: Colors.yellow,
-                  child: TextField(
-                      controller: passwordController,
-                      textAlign: TextAlign.right,
-                      style: const TextStyle(
-                          fontSize: 20, color: Color(0xFF000039)),
-                      decoration: const InputDecoration(
-                        fillColor: Colors.white, filled: true,
-                        prefixIcon: Icon(
-                          Icons.lock,
-                          color: Color(0xFF000039),
-                        ),
-                        border: OutlineInputBorder(),
-                        hoverColor: Color(0xFF800000),
-                        focusColor: Color(0xFF800000),
-                        //labelText: 'اسم المستخدم',
-                        hintText: ' كلمة الســــر',
-                        hintStyle: TextStyle(
-                            color: Color(0xFF000039),
-                            fontWeight: FontWeight.bold),
-                      )),
-                ),
-                const Padding(padding: EdgeInsets.only(top: 50)),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height * 0.07,
-                  //  color: Colors.yellow,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width * 0.90,
-                    // height: 50,
-                    //  width: 350,
-                    decoration: BoxDecoration(
-                        color: const Color(0xFF000039),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                          primary: const Color(0xFF191970)),
-                      onPressed: () {
-                        login(context);
-                        // Navigator.push(context,
-                        //     MaterialPageRoute(builder: (_) => const Home()));
-                      },
-                      child: const Text(
-                        'دخول',
-                        style: TextStyle(color: Colors.white, fontSize: 28),
-                      ),
-                    ),
-                  ),
-                ),
-              ],
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: ListView(
+          children: [
+            Container(
+              color: Colors.white,
+              height: MediaQuery.of(context).size.height * 0.10,
             ),
-          ),
-        );
+            Container(
+              color: Colors.white,
+              height: MediaQuery.of(context).size.height * 0.20,
+              child: const SizedBox(
+                child: Image(image: AssetImage("assets/index.jpg")),
+                // width: MediaQuery.of(context).size.width,
+                // height: MediaQuery.of(context).size.height,
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(top: 30),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.width * 0.9,
+              //  color: Colors.yellow,
+              child: TextField(
+                  controller: userController,
+                  textAlign: TextAlign.right,
+                  style:
+                      const TextStyle(fontSize: 20, color: Color(0xFF000039)),
+                  decoration: const InputDecoration(
+                    fillColor: Colors.white, filled: true,
+                    prefixIcon: Icon(
+                      Icons.person,
+                      color: Color(0xFF000039),
+                    ),
+                    border: OutlineInputBorder(),
+                    hoverColor: Color(0xFF800000),
+                    focusColor: Color(0xFF800000),
+                    //labelText: 'اسم المستخدم',
+                    hintText: 'اسم المستخدم',
+                    hintStyle: TextStyle(
+                        color: Color(0xFF000039), fontWeight: FontWeight.bold),
+                  )),
+            ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.1,
+              width: MediaQuery.of(context).size.width * 0.9,
+              //  color: Colors.yellow,
+              child: TextField(
+                  controller: passwordController,
+                  textAlign: TextAlign.right,
+                  style:
+                      const TextStyle(fontSize: 20, color: Color(0xFF000039)),
+                  decoration: const InputDecoration(
+                    fillColor: Colors.white, filled: true,
+                    prefixIcon: Icon(
+                      Icons.lock,
+                      color: Color(0xFF000039),
+                    ),
+                    border: OutlineInputBorder(),
+                    hoverColor: Color(0xFF800000),
+                    focusColor: Color(0xFF800000),
+                    //labelText: 'اسم المستخدم',
+                    hintText: ' كلمة الســــر',
+                    hintStyle: TextStyle(
+                        color: Color(0xFF000039), fontWeight: FontWeight.bold),
+                  )),
+            ),
+            const Padding(padding: EdgeInsets.only(top: 50)),
+            SizedBox(
+              height: MediaQuery.of(context).size.height * 0.07,
+              //  color: Colors.yellow,
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.90,
+                // height: 50,
+                //  width: 350,
+                decoration: BoxDecoration(
+                    color: const Color(0xFF000039),
+                    borderRadius: BorderRadius.circular(10)),
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      primary: const Color(0xFF191970)),
+                  onPressed: () {
+                    login(context);
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (_) => const Home()));
+                  },
+                  child: const Text(
+                    'دخول',
+                    style: TextStyle(color: Colors.white, fontSize: 16),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   showLoadingDialog(BuildContext context) {
@@ -168,7 +166,10 @@ class _Login extends State<Login> {
     if (response.data['stutas'] == 1) {
       Navigator.of(context).pop();
       Navigator.of(context).pushAndRemoveUntil(
-          MaterialPageRoute(builder: (BuildContext context) =>  Home(data: response.data,)),
+          MaterialPageRoute(
+              builder: (BuildContext context) => Home(
+                    data: response.data,
+                  )),
           (Route<dynamic> route) => false);
     } else {
       showBar(context, 'ليس لديك صلاحية دخول');
