@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:project/login.dart';
 import 'package:project/SplashDemo.dart';
 void main() {
   runApp( const MyApp());
