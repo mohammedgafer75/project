@@ -14,11 +14,10 @@ class Ads extends StatefulWidget {
 }
 
 class _AdsState extends State<Ads> {
-  
   @override
   void initState() {
     super.initState();
-     initData();
+    initData();
   }
 
   List<Uint8List> byets = [];
@@ -26,7 +25,7 @@ class _AdsState extends State<Ads> {
   Future initData() async {
     var dio = Dio();
     final response = await dio.get(
-      'http://62.12.101.62/TAC/Home/GetImage',
+      'http://192.168.0.1:81/Home/GetImage',
       queryParameters: {
         'DepartmentID': widget.data['departmentID'],
         'SemesterID': widget.data['semesterID'],
@@ -78,12 +77,11 @@ class _AdsState extends State<Ads> {
                         child: Center(
                           child: ListView.separated(
                             itemBuilder: (context, position) {
-                            
                               return Card(
                                 child: Padding(
                                   padding: const EdgeInsets.all(15.0),
-                                  child:
-                                      Image(image: MemoryImage(byets[position])),
+                                  child: Image(
+                                      image: MemoryImage(byets[position])),
                                 ),
                               );
                             },
@@ -109,5 +107,4 @@ class _AdsState extends State<Ads> {
 
     //=======================================================
   }
-
 }
