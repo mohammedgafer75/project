@@ -6,7 +6,7 @@ import 'package:project/results.dart';
 import 'package:project/tables.dart';
 
 class Home extends StatefulWidget {
-  const Home({Key? key,required this.data}) : super(key: key);
+  const Home({Key? key, required this.data}) : super(key: key);
   final dynamic data;
   @override
   _HomeState createState() => _HomeState();
@@ -20,8 +20,8 @@ class _HomeState extends State<Home> {
 
         appBar: AppBar(
           backgroundColor: const Color(0xFF191970),
-          title:  Text(
-            'مرحبا بك : ${widget.data['name']}',
+          title: Text(
+            'مرحبا بك : ${widget.data['Name']}',
             style: TextStyle(fontWeight: FontWeight.bold),
           ),
           centerTitle: true,
@@ -54,7 +54,7 @@ class _HomeState extends State<Home> {
                 leading: const Icon(
                   Icons.person,
                 ),
-                title:  Text('${widget.data['name']} : الاسم'),
+                title: Text('${widget.data['Name']} : الاسم'),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -63,7 +63,7 @@ class _HomeState extends State<Home> {
                 leading: const Icon(
                   Icons.class_,
                 ),
-                title:  Text('${widget.data['semesterName']} : السمستر'),
+                title: Text('${widget.data['SemesterName']} : السمستر'),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -72,7 +72,7 @@ class _HomeState extends State<Home> {
                 leading: const Icon(
                   Icons.class_,
                 ),
-                title:  Text('${widget.data['departmentName']} : قسم '),
+                title: Text('${widget.data['DepartmentName']} : قسم '),
                 onTap: () {
                   Navigator.pop(context);
                 },
@@ -98,8 +98,12 @@ class _HomeState extends State<Home> {
                         primary: const Color(0xFF191970)),
                     onPressed: () {
                       print('إعلانات');
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Ads(data: widget.data,)));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Ads(
+                                    data: widget.data,
+                                  )));
                     },
                     //color: Color(0xFF000039),
                     child: Row(
@@ -139,8 +143,10 @@ class _HomeState extends State<Home> {
                         primary: const Color(0xFF191970)),
 
                     onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Tables(data: widget.data)));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Tables(data: widget.data)));
                     },
                     // color: Color(0xFF000039),
                     child: Row(
@@ -181,8 +187,11 @@ class _HomeState extends State<Home> {
 
                     onPressed: () {
                       print('إعلانات');
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Results(data: widget.data)));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) =>
+                                  Results(data: widget.data)));
                     },
                     //color: Color(0xFF000039),
                     child: Row(

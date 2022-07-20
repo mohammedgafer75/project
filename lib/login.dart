@@ -174,7 +174,7 @@ class _Login extends State<Login> {
       },
     );
     print(response.data);
-    if (response.data['stutas'] == 1) {
+    if (response.data['stutas'] != null) {
       Navigator.of(context).pop();
       Navigator.of(context).pushAndRemoveUntil(
           MaterialPageRoute(
@@ -183,6 +183,7 @@ class _Login extends State<Login> {
                   )),
           (Route<dynamic> route) => false);
     } else {
+      Navigator.of(context).pop();
       showBar(context, 'ليس لديك صلاحية دخول');
     }
     return response.data;

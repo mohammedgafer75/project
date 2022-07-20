@@ -27,15 +27,15 @@ class _AdsState extends State<Ads> {
     final response = await dio.get(
       'http://192.168.0.1:81/Home/GetImage',
       queryParameters: {
-        'DepartmentID': widget.data['departmentID'],
-        'SemesterID': widget.data['semesterID'],
+        'DepartmentID': widget.data['DepartmentID'],
+        'SemesterID': widget.data['SemesterID'],
         'type': 1
       },
     );
     List images = response.data;
     // print(response.data);
     images.forEach((element) {
-      byets.add(base64.decode(element['image']));
+      byets.add(base64.decode(element['Image']));
     });
     check = 1;
     return;
